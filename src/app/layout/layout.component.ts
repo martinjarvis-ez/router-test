@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import {Widget} from '../widget';
 
 @Component({
   selector: 'layout',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutComponent implements OnInit {
 
-  constructor() { }
+  widget:Widget;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.widget=  this.route.snapshot.data['widget'];
   }
 
 }
