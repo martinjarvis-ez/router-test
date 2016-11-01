@@ -1,0 +1,43 @@
+<fieldset>
+  <legend>Search Criteria</legend>
+  <p><input type="checkbox" id="oneWay" [(ngModel)]="model.OneWay"  /><label for="oneWay">One Way</label>
+    <p>
+      <label for="departureAirport">Depart From:</label>
+      <select id="departureAirport" required [(ngModel)]="model.DepartureAirport">
+<option value="LTN">London Luton (LTN)</option>
+<option value="ABZ">Aberdeen (ABZ)</option>
+<option value="MAD">Madrid (MAD)</option>
+</select>
+    </p>
+    <p>
+      <label for="arrivalAirport">Arrive At:</label>
+      <select id="arrivalAirport" required [(ngModel)]="model.ArrivalAirport" >
+    <option value="LTN">London Luton (LTN)</option>
+    <option value="ABZ">Aberdeen (ABZ)</option>
+    <option value="MAD">Madrid (MAD)</option>
+  </select>
+    </p>
+    <p>
+      <label for="departureDate">Depart On:</label>
+      <input type="date" id="departureDate" required [(ngModel)]="model.DepartureDate" />
+    </p>
+    <p *ngIf="!model.OneWay">
+      <label for="returnDate">Return On:</label>
+      <input type="date" id="arrivalDate" min="{{model.DepartureDate}}" [(ngModel)]="model.ReturnDate" />
+    </p>
+    <p>
+      <label for="adultCount">Adults (16+)</label>
+      <input type="number" id="adultCount" min="1" [(ngModel)]="model.Mix.AdultCount"  />
+    </p>
+    <p>
+      <label for="childCount">Children (2-15)</label>
+      <input type="number" id="childCount" min="0" [(ngModel)]="model.Mix.ChildCount"  />
+    </p>
+    <p>
+      <label for="infantCount">Infant (&lt;2)</label>
+      <input type="number" id="infantCount" min="0" [(ngModel)]="model.Mix.InfantCount" />
+    </p>
+    <p>
+      <button type="submit"  (click)="onSubmit()">Show Flights</button>
+    </p>
+</fieldset>

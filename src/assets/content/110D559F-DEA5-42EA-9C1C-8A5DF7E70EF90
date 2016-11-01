@@ -1,0 +1,47 @@
+{
+	"name": "Master Layout",
+	"path": "/Views/Shared/Master Layout.cshtml",
+	"placeholders": [{
+		"name": "main",
+		"controls": [{
+			"name": "Search Pod",
+			"type": "View Rendering",
+			"path": "/Views/SearchPod.cshtml",
+			"dataSources": [{
+				"type": "Search Pod Model",
+				"name": "Search Pod",
+				"path": "content/Home/Search Pod",
+				"fields": [{
+					"name": "Departure: ",
+					"type": "Single Line Text",
+					"value": "Departure: "
+				}, {
+					"name": "Destination: ",
+					"type": "Single Line Text",
+					"value": "Destination: "
+				}]
+			}]
+		}]
+	}, {
+		"name": "basket",
+		"controls": [{
+			"name": "Search Pod Header",
+			"type": "View Rendering",
+			"path": "/Views/SearchPod.cshtml"
+		}]
+	}, {
+		"name": "header",
+		"controls": [{
+			"name": "Search Pod Header",
+			"type": "View Rendering",
+			"path": "/Views/SearchPod.cshtml"
+		}]
+	}, {
+		"name": "footer",
+		"controls": [{
+			"name": "Search Pod Footer",
+			"type": "View Rendering",
+			"path": "/Views/SearchPod.cshtml"
+		}]
+	}]
+}
