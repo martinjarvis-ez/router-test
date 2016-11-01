@@ -5,30 +5,30 @@ import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 import 'rxjs/add/observable/throw'
 import {Settings} from './settings';
-import {Widget} from './widget';
+import {Control} from './control';
 
 @Injectable()
-export class WidgetService {
+export class ControlService {
 
   constructor(private http : Http) { }
 
-  fetchContent(contentId:string): Observable<Widget>{
+  fetchContent(contentId:string): Observable<Control>{
       let contentid = contentId;
       if (!contentid) contentid=Settings.DefaultContentId;
       let contentUrl = `${Settings.ContentUrl}${contentid}`;
-      let widget$ = this.http
+      let control$ = this.http
         .get(contentUrl)
-        .map(this.mapWidget)
+        .map(this.mapContent)
         .catch(this.handleError);
-        return widget$;
+        return control$;
     }
 
-    private mapWidget(res:Response): Widget{
+    private mapContent(res:Response): Control{
       if(res.status < 200 || res.status >= 300) {
       throw new Error('This request has failed ' + res.status);
       }
         else {
-         return res.json() as Widget;
+         return res.json() as Control;
     }
 
     }
