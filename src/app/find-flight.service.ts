@@ -46,9 +46,9 @@ export class FindFlightService {
     params.set('ChildSeats', `${criteria.Mix.ChildCount}`);
     params.set('AdditionalSeats', `${criteria.Mix.InfantCount}`);
     var maxDate = moment(criteria.ReturnDate).startOf("d").add(1, "d");
-    params.set('MaxDepartureDate', maxDate.format());
+    params.set('MaxDepartureDate', maxDate.format('YYYY-MM-DD'));
     var minDate = moment(criteria.ReturnDate).startOf("d").add(-1, "d");
-    params.set('MinDepartureDate', minDate.format());
+    params.set('MinDepartureDate', minDate.format('YYYY-MM-DD'));
     params.set('IncludeFlexiFares', "false");
     params.set('IncludePrices', "true");
     params.set('IsTransfer', "false");
@@ -68,9 +68,9 @@ export class FindFlightService {
     params.set('ChildSeats', `${criteria.Mix.ChildCount}`);
     params.set('AdditionalSeats', `${criteria.Mix.InfantCount}`);
     var maxDate = moment(criteria.DepartureDate).startOf("d").add(1, "d");
-    params.set('MaxDepartureDate', maxDate.format());
+    params.set('MaxDepartureDate', maxDate.format('YYYY-MM-DD'));
     var minDate = moment(criteria.DepartureDate).startOf("d").add(-1, "d");
-    params.set('MinDepartureDate', minDate.format());
+    params.set('MinDepartureDate', minDate.format('YYYY-MM-DD'));
     params.set('IncludeFlexiFares', "false");
     params.set('IncludePrices', "true");
     params.set('IsTransfer', "false");
@@ -105,8 +105,6 @@ export class FindFlightService {
         for (let fdidx = 0; fdidx < flights.length; fdidx++) {
           let fs = flights[fdidx];
           if (moment(fs.SegmentId.Date).format('YYYY MM DD') !== currentDate.format('YYYY MM DD')) {
-            console.log(moment(fs.SegmentId.Date).startOf('day'));
-            console.log(currentDate.startOf('day'));
             continue;
           }
           let f: Flight = {

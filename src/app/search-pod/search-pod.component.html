@@ -2,7 +2,7 @@
   <legend>Search Criteria</legend>
   <p><input type="checkbox" id="oneWay" [(ngModel)]="model.OneWay"  /><label for="oneWay">One Way</label>
     <p>
-      <label for="departureAirport">Depart From:</label>
+      <label for="departureAirport" [innerHTML]="field('Departure') || 'Depart From:'">Depart From:</label>
       <select id="departureAirport" required [(ngModel)]="model.DepartureAirport">
 <option value="LTN">London Luton (LTN)</option>
 <option value="LGW">London Gatwick (LGW)</option>
@@ -12,7 +12,7 @@
 </select>
     </p>
     <p>
-      <label for="arrivalAirport">Arrive At:</label>
+      <label for="arrivalAirport" [innerHTML]="field('Destination') || 'Arrive At:'">Arrive At:</label>
       <select id="arrivalAirport" required [(ngModel)]="model.ArrivalAirport" >
     <option value="LTN">London Luton (LTN)</option>
     <option value="LGW">London Gatwick (LGW)</option>

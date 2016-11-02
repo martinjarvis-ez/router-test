@@ -12,11 +12,11 @@
 				"name": "Search Pod",
 				"path": "content/Home/Search Pod",
 				"fields": [{
-					"name": "Departure: ",
+					"name": "Departure",
 					"type": "Single Line Text",
 					"value": "Departure: "
 				}, {
-					"name": "Destination: ",
+					"name": "Destination",
 					"type": "Single Line Text",
 					"value": "Destination: "
 				}]

@@ -9,6 +9,6 @@ import { LayoutComponent } from './layout/layout.component';
 export const APP_ROUTES: Route[] =[
  { path: 'not-found', component: NotFoundComponent },
  { path: ':contentId', component: LayoutComponent, resolve: { control: ControlResolver } },
- { path: '', redirectTo: '/'+Settings.DefaultContentId, pathMatch: 'full'},
+ { path: '', redirectTo: '/' + Settings.DefaultContentId, pathMatch: 'full'},
  { path: '**', redirectTo: 'not-found' }
 ];
