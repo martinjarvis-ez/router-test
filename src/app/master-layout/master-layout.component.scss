@@ -1,25 +1,64 @@
-header{
-  padding:10px;
+@import '../../assets/styles/variables.scss';
+
+header {
   border-bottom: 1px solid black;
-  margin-bottom:20px;
+  margin-bottom: 20px;
+  height: 50px;
+  background: $ej-brand url($ej-header-img);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 3px 5px 1px #444;
+
+  &:before {
+    content: url($ej-header-logo);
+    top:10px;
+    position: fixed;
+    left:10px;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 150px;
+
+    a {
+      display: inline-block;
+      line-height: 50px;
+      color: #f2f2f2;
+      height: 50px;
+      text-decoration: none;
+      padding: 0 10px;
+      font-size: 16px;
+      font-weight: normal;
+
+      &:hover {
+        text-decoration: underline;
+        background-color: black;
+      }
+    }
+  }
 }
 
-aside{
-  float:right;
-  border:1px solid black;
-  padding:10px;
+aside {
+  float: right;
+  border: 1px solid black;
+  padding: 10px;
+  margin-top:50px;
 }
 
-section{
-  float:left;
+section {
+  float: left;
+  margin-top:50px;
 }
 
-footer{
-  clear:both;
-  border-top:1px solid black;
-  padding:10px;
-  margin-top:20px;
-  text-align:center;
+footer {
+  clear: both;
+  border-top: 1px solid black;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
   border-bottom: 1px solid black;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }

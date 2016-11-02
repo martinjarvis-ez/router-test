@@ -31,21 +31,8 @@
 		}]
 	}, {
 		"name": "header",
-		"controls": [{
-			"name": "Html Header Text",
-			"type": "View Rendering",
-			"path": "/Views/Html.cshtml",
-			"dataSources": [{
-				"type": "Header Text",
-				"name": "Header Text",
-				"path": "content/Home/Header Text",
-				"fields": [{
-					"name": "Body",
-					"type": "Single Line Text",
-					"value": "<h1>Page Header</h1>\n<h4>Sitecore driven <em>in principle</em></h4>"
-				}]
-			}]
-		}]}, {
+		"controls": []
+		}, {
 			"name": "footer",
 			"controls": [{
 				"name": "Html Footer Text",
