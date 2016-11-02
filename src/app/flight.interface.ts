@@ -1,4 +1,4 @@
-export interface IFlight {
+export interface Flight {
   DepartureAirport:string;
   ArrivalAirport:string;
   DepartureDate:Date;

@@ -8,7 +8,7 @@ export class CommonControlComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.destroyReferences();
   }
-  private destroyReferences() {
+  destroyReferences() {
     if (this.templateReference) {
       for (let tr of this.templateReference) {
         tr.destroy();

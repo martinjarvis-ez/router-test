@@ -13,6 +13,7 @@ export class MasterLayoutComponent implements AfterViewInit, OnInit   {
   @ViewChild('header', {read: ViewContainerRef}) header : ViewContainerRef;
   @ViewChild('main', {read: ViewContainerRef}) main : ViewContainerRef;
   @ViewChild('footer', {read: ViewContainerRef}) footer : ViewContainerRef;
+  @ViewChild('basket', {read: ViewContainerRef}) basket : ViewContainerRef;
 
   private mapper: ControlToComponentMapperService;
   constructor(private injector: Injector, private current: CurrentContentService) {
@@ -27,5 +28,6 @@ export class MasterLayoutComponent implements AfterViewInit, OnInit   {
     setTimeout(()=> this.mapper.createPlaceholderControls(this.header, this.current.placeholders, "header"));
     setTimeout(()=> this.mapper.createPlaceholderControls(this.main, this.current.placeholders, "main"));
     setTimeout(()=> this.mapper.createPlaceholderControls(this.footer, this.current.placeholders, "footer"));
+    setTimeout(()=> this.mapper.createPlaceholderControls(this.basket, this.current.placeholders, "basket"));
   }
 }

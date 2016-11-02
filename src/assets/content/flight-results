@@ -21,27 +21,66 @@
 					"value": "Destination: "
 				}]
 			}]
+		},
+		{
+			"name": "Flight Result",
+			"type": "View Rendering",
+			"path": "/Views/FlightResult.cshtml"
 		}]
 	}, {
 		"name": "basket",
 		"controls": [{
-			"name": "Search Pod Header",
+			"name": "Search Pod Debug",
 			"type": "View Rendering",
-			"path": "/Views/SearchPod.cshtml"
-		}]
+			"path": "/Views/SearchPodCriteriaDebug.cshtml"
+		},{
+			"name": "Html Basket Text",
+			"type": "View Rendering",
+			"path": "/Views/Html.cshtml",
+			"dataSources": [{
+				"type": "Basket Text",
+				"name": "Basket Text",
+				"path": "content/Home/Basket Text",
+				"fields": [{
+					"name": "Body",
+					"type": "Single Line Text",
+					"value": "<p><strong>CMS Driven</strong> Sales Blurb<p>"
+				}]
+			}]
+	}]
 	}, {
 		"name": "header",
 		"controls": [{
-			"name": "Search Pod Header",
+			"name": "Html Header Text",
 			"type": "View Rendering",
-			"path": "/Views/SearchPod.cshtml"
+			"path": "/Views/Html.cshtml",
+			"dataSources": [{
+				"type": "Header Text",
+				"name": "Header Text",
+				"path": "content/Home/Header Text",
+				"fields": [{
+					"name": "Body",
+					"type": "Single Line Text",
+					"value": "<h1>Flight Results</h1>\n<h4>Sitecore driven <em>in principle</em></h4>"
+				}]
+			}]
+		}]}, {
+			"name": "footer",
+			"controls": [{
+				"name": "Html Footer Text",
+				"type": "View Rendering",
+				"path": "/Views/Html.cshtml",
+				"dataSources": [{
+					"type": "Footer Text",
+					"name": "Footer Text",
+					"path": "content/Home/Footer Text",
+					"fields": [{
+						"name": "Body",
+						"type": "Single Line Text",
+						"value": "<p><strong>CMS Driven</strong> Footer Text<p>"
+					}]
+				}]
 		}]
-	}, {
-		"name": "footer",
-		"controls": [{
-			"name": "Search Pod Footer",
-			"type": "View Rendering",
-			"path": "/Views/SearchPod.cshtml"
-		}]
+
 	}]
 }

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { FindFlightService } from '../find-flight.service';
 import { Subscription } from 'rxjs/Subscription';
-import { IFlightResult } from '../iflight-result';
+import { FlightResult } from '../flight-result.interface';
 import { FlightType } from '../flight-type.enum';
 
 @Component({
@@ -13,7 +13,7 @@ export class FlightGridComponent implements OnInit {
 
   @Input() flightType: FlightType;
 
-  model: IFlightResult[];
+  model: FlightResult[];
 
   get direction():string{
     return FlightType[this.flightType];
@@ -35,7 +35,7 @@ export class FlightGridComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-  private updateResults(results: IFlightResult[]){
+  private updateResults(results: FlightResult[]){
     this.model = results;
   }
 

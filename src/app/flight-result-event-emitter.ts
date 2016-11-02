@@ -1,7 +1,7 @@
 import {Subject} from 'rxjs/Subject';
-import { IFlightResult } from './iflight-result'
+import { FlightResult } from './flight-result.interface'
 
-export class FlightResultEventEmitter extends Subject<IFlightResult[]> {
+export class FlightResultEventEmitter extends Subject<FlightResult[]> {
   emit(value) {
         super.next(value);
   }

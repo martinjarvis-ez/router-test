@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IFlight } from '../iflight';
+import { Flight } from '../flight.interface';
 
 @Component({
   selector: 'flight-tile',
@@ -8,7 +8,7 @@ import { IFlight } from '../iflight';
 })
 export class FlightTileComponent  {
 
-  @Input() flight: IFlight;
+  @Input() flight: Flight;
 
   constructor() { }
 

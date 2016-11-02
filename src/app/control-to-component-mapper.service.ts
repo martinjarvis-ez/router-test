@@ -21,15 +21,17 @@ export class ControlToComponentMapperService {
 
   createPlaceholderControls(template: ViewContainerRef, placeholders: Placeholder[], placeholder: string): ComponentRef<any>[] {
     let refs: ComponentRef<any>[] = [];
-    let contentControls = placeholders.filter((ph: Placeholder) => ph.name === placeholder)[0];
-    if (contentControls && contentControls.controls) {
-      let controls = contentControls.controls || [];
-      for (let ctrl of controls) {
-        let component: any = this.getComponentFromPath(ctrl.path);
-        let componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
-        let componentRef = template.createComponent(componentFactory) as ComponentRef<ControlComponent>;
-        componentRef.instance.control = ctrl;
-        refs.push(componentRef);
+    if (placeholders) {
+      let contentControls = placeholders.filter((ph: Placeholder) => ph.name === placeholder)[0];
+      if (contentControls && contentControls.controls) {
+        let controls = contentControls.controls || [];
+        for (let ctrl of controls) {
+          let component: any = this.getComponentFromPath(ctrl.path);
+          let componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
+          let componentRef = template.createComponent(componentFactory) as ComponentRef<ControlComponent>;
+          componentRef.instance.control = ctrl;
+          refs.push(componentRef);
+        }
       }
     }
     return refs;

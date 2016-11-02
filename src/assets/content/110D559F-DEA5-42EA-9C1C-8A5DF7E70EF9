@@ -23,18 +23,45 @@
 			}]
 		}]
 	}, {
-		"name": "header",
+		"name": "basket",
 		"controls": [{
-			"name": "Search Pod Header",
+			"name": "Search Pod Debug",
 			"type": "View Rendering",
-			"path": "/Views/SearchPod.cshtml"
+			"path": "/Views/SearchPodCriteriaDebug.cshtml"
 		}]
 	}, {
-		"name": "footer",
+		"name": "header",
 		"controls": [{
-			"name": "Search Pod Footer",
+			"name": "Html Header Text",
 			"type": "View Rendering",
-			"path": "/Views/SearchPod.cshtml"
+			"path": "/Views/Html.cshtml",
+			"dataSources": [{
+				"type": "Header Text",
+				"name": "Header Text",
+				"path": "content/Home/Header Text",
+				"fields": [{
+					"name": "Body",
+					"type": "Single Line Text",
+					"value": "<h1>Page Header</h1>\n<h4>Sitecore driven <em>in principle</em></h4>"
+				}]
+			}]
+		}]}, {
+			"name": "footer",
+			"controls": [{
+				"name": "Html Footer Text",
+				"type": "View Rendering",
+				"path": "/Views/Html.cshtml",
+				"dataSources": [{
+					"type": "Footer Text",
+					"name": "Footer Text",
+					"path": "content/Home/Footer Text",
+					"fields": [{
+						"name": "Body",
+						"type": "Single Line Text",
+						"value": "<p><strong>CMS Driven</strong> Footer Text<p>"
+					}]
+				}]
 		}]
+
 	}]
 }

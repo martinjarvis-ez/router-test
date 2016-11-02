@@ -24,6 +24,8 @@ import { SearchPodComponent } from './search-pod/search-pod.component';
 import { FlightGridComponent } from './flight-grid/flight-grid.component';
 import { FlightTileComponent } from './flight-tile/flight-tile.component';
 import { SearchCriteriaDebugComponent } from './search-criteria-debug/search-criteria-debug.component';
+import { HtmlComponent } from './html/html.component';
+import { FlightResultComponent } from './flight-result/flight-result.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { SearchCriteriaDebugComponent } from './search-criteria-debug/search-cri
     SearchPodComponent,
     FlightGridComponent,
     FlightTileComponent,
-    SearchCriteriaDebugComponent
+    SearchCriteriaDebugComponent,
+    HtmlComponent,
+    FlightResultComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,7 @@ import { SearchCriteriaDebugComponent } from './search-criteria-debug/search-cri
   entryComponents: [AppComponent, NotFoundComponent, LayoutComponent, MasterLayoutComponent,   SearchPodComponent,
     FlightGridComponent,
     FlightTileComponent,
-    SearchCriteriaDebugComponent],
+    SearchCriteriaDebugComponent,HtmlComponent,FlightResultComponent],
   providers: [ControlResolver, ControlService, ControlToComponentMapperService, CurrentContentService, FactoryMap,SearchService, FindFlightService],
   bootstrap: [AppComponent]
 })

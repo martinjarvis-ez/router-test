@@ -1,1 +1,0 @@
-http://webapi-flightsearchv1.europe.easyjet.local/api/flights?AdditionalSeats=0&AdultSeats=1&ArrivalIata=BCN&ChildSeats=0&DepartureIata=LGW&IncludeFlexiFares=false&IncludePrices=true&IsTransfer=false&LanguageCode=EN&MaxDepartureDate=2016-11-10&MinDepartureDate=2016-11-08
