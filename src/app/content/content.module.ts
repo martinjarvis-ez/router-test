@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule }   from '@angular/router';
 
 import { COMPONENTS, SERVICES, COMPONENT_MAPPING } from './constants';
 
 @NgModule({
   imports: [
     CommonModule,
-    BrowserModule
+    BrowserModule,
+    RouterModule
   ],
   declarations: [...COMPONENTS],
   entryComponents: [...COMPONENTS],

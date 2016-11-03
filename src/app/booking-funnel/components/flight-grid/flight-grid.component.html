@@ -1,5 +1,5 @@
 <h3 *ngIf="model && model.length>0">{{direction}}</h3>
-<fieldset *ngFor="let day of model">
+  <fieldset class="gr-4" *ngFor="let day of model">
     <legend>{{ day.DepartureAirport }} to {{ day.ArrivalAirport }} on {{ day.Date | date}} ({{ day.Flights.length}})</legend>
-      <flight-tile *ngFor="let flight of day.Flights"  [flight]="flight"></flight-tile>
-</fieldset>
+    <flight-tile *ngFor="let flight of day.Flights" [flight]="flight"></flight-tile>
+  </fieldset>
