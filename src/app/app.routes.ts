@@ -1,14 +1,12 @@
 import { Route }   from '@angular/router';
 
-import {Settings} from './settings';
-import {ControlResolver} from './control-resolver';
+import { ControlResolverService } from 'content/services/control-resolver.service';
 
-import { NotFoundComponent } from './not-found/not-found.component';
-import { LayoutComponent } from './layout/layout.component';
+import { NotFoundComponent } from 'content/components/not-found/not-found.component';
+import { RootLayoutComponent } from 'content/layouts/root-layout/root-layout.component';
 
 export const APP_ROUTES: Route[] =[
  { path: 'not-found', component: NotFoundComponent },
- { path: ':contentId', component: LayoutComponent, resolve: { control: ControlResolver } },
- { path: '', redirectTo: '/' + Settings.DefaultContentId, pathMatch: 'full'},
- { path: '**', redirectTo: 'not-found' }
+ { path: ':contentId', component: RootLayoutComponent, resolve: { control: ControlResolverService } },
+{ path: '**', redirectTo: 'not-found' }
 ];
