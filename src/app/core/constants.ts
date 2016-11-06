@@ -1,9 +1,11 @@
 import { Type } from '@angular/core';
-import { ControlComponent } from 'core/components/control.component';
-import { CommonControlComponent } from 'core/components/common-control.component';
-import { SettingsService } from 'core/services/settings.service';
+import { SettingsService } from './services/settings.service';
+import {DynamicTypeBuilderService} from './services/dynamic-type-builder.service';
+import { FieldDirective } from './directives/field.directive';
 
+
+export const DIRECTIVES: Type<any>[] = [FieldDirective];
 
 export const COMPONENTS: Type<any>[] = [];
 
-export const SERVICES: Type<any>[] = [SettingsService];
+export const SERVICES: Type<any>[] = [SettingsService, DynamicTypeBuilderService];

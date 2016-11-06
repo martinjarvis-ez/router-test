@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CoreModule } from 'core/core.module';
+import { CoreModule } from '../core/core.module';
 import { COMPONENTS, SERVICES, COMPONENT_MAPPING } from './constants';
 
 @NgModule({
@@ -20,6 +20,10 @@ export class BookingFunnelModule {
 
   static forRoot(): Type<any>[] {
     return SERVICES;
+  }
+
+  static getComponents(): Type<any>[] {
+    return COMPONENTS;
   }
 
   static getComponentMappings(): { [path: string]: any; } {

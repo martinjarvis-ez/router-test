@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule }   from '@angular/router';
+import { CoreModule } from '../core/core.module';
 
 import { COMPONENTS, SERVICES, COMPONENT_MAPPING } from './constants';
 
@@ -9,7 +10,8 @@ import { COMPONENTS, SERVICES, COMPONENT_MAPPING } from './constants';
   imports: [
     CommonModule,
     BrowserModule,
-    RouterModule
+    RouterModule,
+    CoreModule
   ],
   declarations: [...COMPONENTS],
   entryComponents: [...COMPONENTS],

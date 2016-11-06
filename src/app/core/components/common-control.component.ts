@@ -1,5 +1,4 @@
 import { ComponentRef,  OnDestroy } from '@angular/core';
-import { Placeholder } from 'core/models/control';
 
 export class CommonControlComponent implements OnDestroy {
 

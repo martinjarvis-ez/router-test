@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { COMPONENTS, SERVICES } from './constants';
+import { COMPILER_PROVIDERS } from '@angular/compiler';
+
+import { COMPONENTS, SERVICES, DIRECTIVES } from './constants';
 
 @NgModule({
   imports: [
@@ -10,14 +12,15 @@ import { COMPONENTS, SERVICES } from './constants';
     FormsModule,
     BrowserModule
   ],
-  declarations: [...COMPONENTS],
+  declarations: [...COMPONENTS, ...DIRECTIVES],
   entryComponents: [...COMPONENTS],
-  providers: [...SERVICES]
+  providers: [...SERVICES, ...COMPILER_PROVIDERS],
+  exports: [...COMPONENTS, ...DIRECTIVES]
 })
 export class CoreModule {
 
   static forRoot(): Type<any>[] {
-    return SERVICES;
+    return [...SERVICES];
   }
 
 }

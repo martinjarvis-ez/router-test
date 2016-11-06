@@ -1,10 +1,13 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { FindFlightService } from 'booking-funnel/services/find-flight.service';
+import { FindFlightService } from '../../services/find-flight.service';
 import { Subscription } from 'rxjs/Subscription';
-import { FlightResult } from 'booking-funnel/models/flight-result.interface';
-import { FlightType } from 'booking-funnel/models/flight-type.enum';
+import { FlightResult } from '../../models/flight-result.interface';
+import { FlightType } from '../../models/flight-type.enum';
+
+let module:any; // nasty fix for systemJs
 
 @Component({
+  moduleId: module.id, // nasty fix for systemJs
   selector: 'flight-grid',
   templateUrl: './flight-grid.component.html',
   styleUrls: ['./flight-grid.component.scss']
