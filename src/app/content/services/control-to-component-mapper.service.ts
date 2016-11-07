@@ -21,6 +21,9 @@ export class ControlToComponentMapperService {
 
   createPlaceholderControls(template: ViewContainerRef, placeholders: Placeholder[], placeholder: string): ComponentRef<any>[] {
     let refs: ComponentRef<any>[] = [];
+    if (placeholder && placeholder.startsWith('/')){
+      placeholder=placeholder.substr(1);
+    }
     if (placeholders) {
       let contentControls = placeholders.filter((ph: Placeholder) => ph.name === placeholder)[0];
       if (contentControls && contentControls.controls) {
@@ -30,6 +33,7 @@ export class ControlToComponentMapperService {
           let componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
           let componentRef = template.createComponent(componentFactory) as ComponentRef<ControlComponent>;
           componentRef.instance.control = ctrl;
+          componentRef.instance.placeholder = placeholder;
           refs.push(componentRef);
         }
       }

@@ -19,6 +19,7 @@ export class RootLayoutComponent extends CommonControlComponent implements OnIni
   private subscription: Subscription;
   constructor(private controlMapper: ControlToComponentMapperService, private route: ActivatedRoute, private currentContent: CurrentContentService) {
     super();
+    debugger;
   }
 
   ngOnInit() {

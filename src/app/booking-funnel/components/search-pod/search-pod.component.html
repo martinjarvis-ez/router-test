@@ -1,8 +1,8 @@
 <fieldset>
   <legend>Search Criteria</legend>
-  <p><input type="checkbox" id="oneWay" [(ngModel)]="model.OneWay"  /><label for="oneWay">One Way</label>
+  <p><input type="checkbox" id="oneWay" [(ngModel)]="model.OneWay" /><label for="oneWay"><span  [field]="'One Way Label'" [control]="control" [isEditing]="isEditing" [defaultValue]="'One Way'"></span></label>
     <p>
-      <label for="departureAirport" [field]="'Departure'" [control]="control" [isEditing]="isEditing" [defaultValue]="'Depart From:'"></label>
+      <label for="departureAirport"><span  [field]="'Departure Label'" [control]="control" [isEditing]="isEditing" [defaultValue]="'Depart From:'"></span></label>
       <select id="departureAirport" required [(ngModel)]="model.DepartureAirport">
 <option value="LTN">London Luton (LTN)</option>
 <option value="LGW">London Gatwick (LGW)</option>
@@ -12,8 +12,8 @@
 </select>
     </p>
     <p>
-      <label for="departureAirport" [field]="'Destination'" [control]="control" [isEditing]="isEditing" [defaultValue]="'Arrive At:'"></label>
-      <select id="arrivalAirport" required [(ngModel)]="model.ArrivalAirport" >
+      <label for="departureAirport"><span  [field]="'Destination Label'" [control]="control" [isEditing]="isEditing" [defaultValue]="'Arrive At:'"></span></label>
+      <select id="arrivalAirport" required [(ngModel)]="model.ArrivalAirport">
     <option value="LTN">London Luton (LTN)</option>
     <option value="LGW">London Gatwick (LGW)</option>
     <option value="BCN">Barcelona (BCN)</option>
@@ -22,26 +22,30 @@
   </select>
     </p>
     <p>
-      <label for="departureDate">Depart On:</label>
+      <label for="departureDate"><span [field]="'Departure Date'" [control]="control" [isEditing]="isEditing" [defaultValue]="'Depart On:'"></span></label>
       <input type="date" id="departureDate" required [(ngModel)]="model.DepartureDate" />
     </p>
     <p *ngIf="!model.OneWay">
-      <label for="returnDate">Return On:</label>
+      <label for="returnDate"><span [field]="'Return Date'" [control]="control" [isEditing]="isEditing" [defaultValue]="'Return On:'"></span></label>
       <input type="date" id="arrivalDate" min="{{model.DepartureDate}}" [(ngModel)]="model.ReturnDate" />
     </p>
+    <fieldset>
+      <legend><span [field]="'Passenger Mix'" [control]="control" [isEditing]="isEditing" [defaultValue]="'Passenger Mix'"></span></legend>
+      <p>
+        <label for="adultCount"><span>Adults (16+)</span></label>
+        <input type="number" id="adultCount" min="1" [(ngModel)]="model.Mix.AdultCount" />
+      </p>
+      <p>
+        <label for="childCount"><span>Children (2-15)</span></label>
+        <input type="number" id="childCount" min="0" [(ngModel)]="model.Mix.ChildCount" />
+      </p>
+      <p>
+        <label for="infantCount"><span>Infant (&lt;2)</span></label>
+        <input type="number" id="infantCount" min="0" [(ngModel)]="model.Mix.InfantCount" />
+      </p>
+    </fieldset>
     <p>
-      <label for="adultCount">Adults (16+)</label>
-      <input type="number" id="adultCount" min="1" [(ngModel)]="model.Mix.AdultCount"  />
+      <button type="submit" (click)="onSubmit()">Show Flights</button>
     </p>
-    <p>
-      <label for="childCount">Children (2-15)</label>
-      <input type="number" id="childCount" min="0" [(ngModel)]="model.Mix.ChildCount"  />
-    </p>
-    <p>
-      <label for="infantCount">Infant (&lt;2)</label>
-      <input type="number" id="infantCount" min="0" [(ngModel)]="model.Mix.InfantCount" />
-    </p>
-    <p>
-      <button type="submit"  (click)="onSubmit()">Show Flights</button>
-    </p>
+
 </fieldset>

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ViewContainerRef, Injector, OnInit} from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ViewContainerRef} from '@angular/core';
 import { ControlToComponentMapperService  } from 'content/services/control-to-component-mapper.service';
 import { CurrentContentService } from 'content/services/current-content.service';
 
@@ -7,7 +7,7 @@ import { CurrentContentService } from 'content/services/current-content.service'
   templateUrl: './master-layout.component.html',
   styleUrls: ['./master-layout.component.scss']
 })
-export class MasterLayoutComponent implements AfterViewInit, OnInit   {
+export class MasterLayoutComponent implements AfterViewInit   {
 
 
   @ViewChild('header', {read: ViewContainerRef}) header : ViewContainerRef;
@@ -15,14 +15,9 @@ export class MasterLayoutComponent implements AfterViewInit, OnInit   {
   @ViewChild('footer', {read: ViewContainerRef}) footer : ViewContainerRef;
   @ViewChild('basket', {read: ViewContainerRef}) basket : ViewContainerRef;
 
-  private mapper: ControlToComponentMapperService;
-  constructor(private injector: Injector, private current: CurrentContentService) {
+  constructor(private mapper: ControlToComponentMapperService, private current: CurrentContentService) {
 
   }
-
- ngOnInit(){
-   this.mapper = this.injector.get(ControlToComponentMapperService);
- }
 
   ngAfterViewInit() {
     setTimeout(()=> this.mapper.createPlaceholderControls(this.header, this.current.placeholders, "header"));

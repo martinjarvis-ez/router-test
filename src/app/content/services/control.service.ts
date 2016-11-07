@@ -30,7 +30,6 @@ export class ControlService {
     }
     else {
       let c = res.json() as Layout;
-
       return c;
     }
 

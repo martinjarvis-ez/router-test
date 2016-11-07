@@ -1,11 +1,12 @@
-import { Directive, ElementRef, Input, Renderer, ViewContainerRef, Component} from '@angular/core';
+import { Directive, ElementRef, Input, Renderer, ViewContainerRef, Component, ComponentRef } from '@angular/core';
+import { CommonControlComponent } from '../components/common-control.component';
 import { Control } from '../models/control';
 import { DynamicTypeBuilderService } from '../services/dynamic-type-builder.service'
 
 @Directive({
   selector: '[field]'
 })
-export class FieldDirective {
+export class FieldDirective extends CommonControlComponent {
 
   private _defaultValue: string;
   @Input() set defaultValue(value: string) {
@@ -34,6 +35,7 @@ export class FieldDirective {
   }
 
   constructor(private el: ElementRef, private renderer: Renderer, private viewContainerRef: ViewContainerRef, private builder: DynamicTypeBuilderService) {
+    super();
   }
 
   private update() {
@@ -55,21 +57,22 @@ export class FieldDirective {
         return;
       }
       // should be safe to run everywhere!
-      FieldDirective.addDynamicContent(this.viewContainerRef, this.builder, value || this._defaultValue);
+      FieldDirective.addDynamicContent(this.viewContainerRef, this.builder, value || this._defaultValue, this.templateReference);
 
     }
   }
 
-  private static addDynamicContent(vcRef: ViewContainerRef, builder: DynamicTypeBuilderService, template: string) {
+  private static addDynamicContent(vcRef: ViewContainerRef, builder: DynamicTypeBuilderService, template: string, componentRefs: ComponentRef<any>[]) {
 
     builder.createComponentFactory(template)
       .then(factory => {
         vcRef.clear();
-        vcRef.createComponent(factory);
+        let cmp = vcRef.createComponent(factory);
+        componentRefs.push(cmp);
       });
   }
 
-  private static getFieldValue(data: Control, fieldName: string): string {
+  static getFieldValue(data: Control, fieldName: string): string {
     if (data && data.dataSources) {
       for (let ds of data.dataSources) {
         for (let f of ds.fields) {
