@@ -4,10 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { FlightResult } from '../../models/flight-result.interface';
 import { FlightType } from '../../models/flight-type.enum';
 
-let module:any; // nasty fix for systemJs
-
 @Component({
-  moduleId: module.id, // nasty fix for systemJs
   selector: 'flight-grid',
   templateUrl: './flight-grid.component.html',
   styleUrls: ['./flight-grid.component.scss']

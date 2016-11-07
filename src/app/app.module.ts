@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 import { BookingFunnelModule } from './booking-funnel';
 import { ContentModule } from './content';
-
+/*import { RuntimeCompiler } from '@angular/compiler';*/
 
 @NgModule({
   declarations: [
@@ -28,7 +28,9 @@ import { ContentModule } from './content';
   providers: [
     ...ContentModule.forRoot(),
     ...BookingFunnelModule.forRoot(),
-    ...CoreModule.forRoot()],
+    ...CoreModule.forRoot()/*,
+    RuntimeCompiler*/
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

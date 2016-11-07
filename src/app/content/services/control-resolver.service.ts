@@ -5,7 +5,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { ControlService } from './control.service';
 import { CurrentContentService } from './current-content.service';
-import { Layout } from 'core/models/control';
+import { Layout } from '../../core/models/control';
 
 @Injectable()
 export class ControlResolverService implements Resolve<Layout>  {

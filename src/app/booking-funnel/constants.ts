@@ -14,6 +14,10 @@ export const COMPONENTS: Type<any>[] = [
   FlightGridComponent,
   FlightTileComponent];
 
+export const BOOTSTRAP_COMPONENTS: Type<any>[] = [
+  SearchPodComponent
+]
+
 export const SERVICES: Type<any>[] = [
   SearchService,
   FindFlightService];

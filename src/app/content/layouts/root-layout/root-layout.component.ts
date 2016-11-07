@@ -1,11 +1,12 @@
 import { Component, OnInit, AfterViewInit, ViewChild, ViewContainerRef, ComponentFactoryResolver, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CommonControlComponent } from 'core/components/common-control.component';
-import { ControlToComponentMapperService  } from 'content/services/control-to-component-mapper.service';
-import { CurrentContentService } from 'content/services/current-content.service';
-import { Layout } from 'core/models/control';
+import { CommonControlComponent } from '../../../core/components/common-control.component';
+import { ControlToComponentMapperService  } from '../../services/control-to-component-mapper.service';
+import { CurrentContentService } from '../../services/current-content.service';
+import { Layout } from '../../../core/models/control';
 
 import { Subscription } from 'rxjs/Subscription';
+
 @Component({
   selector: 'root-layout',
   templateUrl: './root-layout.component.html',
@@ -19,7 +20,6 @@ export class RootLayoutComponent extends CommonControlComponent implements OnIni
   private subscription: Subscription;
   constructor(private controlMapper: ControlToComponentMapperService, private route: ActivatedRoute, private currentContent: CurrentContentService) {
     super();
-    debugger;
   }
 
   ngOnInit() {

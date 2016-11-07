@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Layout, Placeholder } from 'core/models/control';
+import { Layout, Placeholder } from '../../core/models/control';
 import {Subject} from 'rxjs/Subject';
 
 @Injectable()
@@ -21,7 +21,7 @@ export class CurrentContentService {
 }
 
 export class LayoutEventEmitter extends Subject<Layout> {
-  emit(value) {
+  emit(value: Layout) {
     super.next(value);
   }
 }

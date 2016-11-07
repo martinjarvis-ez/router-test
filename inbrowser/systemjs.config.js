@@ -6,7 +6,8 @@
       'npm:': 'https://unpkg.com/',
 
       'booking-funnel:': 'ng2/src/app/booking-funnel',
-      'core:': 'ng2/src/app/core'
+      'core:': 'ng2/src/app/core',
+      'content:': 'ng2/src/app/content'
 
     },
     // map tells the System loader where to look for things

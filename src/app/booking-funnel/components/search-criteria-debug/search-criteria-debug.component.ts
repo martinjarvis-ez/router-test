@@ -3,10 +3,7 @@ import {SearchService} from '../../services/search.service';
 import { Subscription } from 'rxjs/Subscription';
 import { SearchCriteria } from '../../models/search-criteria'
 
-let module:any; // nasty fix for systemJs
-
 @Component({
-  moduleId: module.id, // nasty fix for systemJs
   selector: 'search-criteria-debug',
   templateUrl: './search-criteria-debug.component.html',
   styleUrls: ['./search-criteria-debug.component.scss']

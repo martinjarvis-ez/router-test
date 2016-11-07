@@ -1,5 +1,5 @@
 import { Component, ComponentFactoryResolver } from '@angular/core';
-import {ControlComponent} from 'core/components/control.component';
+import {ControlComponent} from '../../../core/components/control.component';
 
 @Component({
   selector: 'not-found',

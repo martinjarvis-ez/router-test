@@ -1,7 +1,7 @@
 import { Directive, ElementRef, Input, Renderer, ViewContainerRef, Component, ComponentRef } from '@angular/core';
 import { CommonControlComponent } from '../components/common-control.component';
 import { Control } from '../models/control';
-import { DynamicTypeBuilderService } from '../services/dynamic-type-builder.service'
+//import { DynamicTypeBuilderService } from '../services/dynamic-type-builder.service'
 
 @Directive({
   selector: '[field]'
@@ -34,7 +34,7 @@ export class FieldDirective extends CommonControlComponent {
     this.update();
   }
 
-  constructor(private el: ElementRef, private renderer: Renderer, private viewContainerRef: ViewContainerRef, private builder: DynamicTypeBuilderService) {
+  constructor(private el: ElementRef, private renderer: Renderer, private viewContainerRef: ViewContainerRef/*, private builder: DynamicTypeBuilderService*/) {
     super();
   }
 
@@ -56,12 +56,13 @@ export class FieldDirective extends CommonControlComponent {
         }
         return;
       }
+      this.renderer.setText(this.el.nativeElement, value || this._defaultValue);
       // should be safe to run everywhere!
-      FieldDirective.addDynamicContent(this.viewContainerRef, this.builder, value || this._defaultValue, this.templateReference);
+      //FieldDirective.addDynamicContent(this.viewContainerRef, this.builder, value || this._defaultValue, this.templateReference);
 
     }
   }
-
+/*
   private static addDynamicContent(vcRef: ViewContainerRef, builder: DynamicTypeBuilderService, template: string, componentRefs: ComponentRef<any>[]) {
 
     builder.createComponentFactory(template)
@@ -71,7 +72,7 @@ export class FieldDirective extends CommonControlComponent {
         componentRefs.push(cmp);
       });
   }
-
+*/
   static getFieldValue(data: Control, fieldName: string): string {
     if (data && data.dataSources) {
       for (let ds of data.dataSources) {

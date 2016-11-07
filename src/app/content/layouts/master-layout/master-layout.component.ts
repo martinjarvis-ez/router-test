@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ViewChild, ViewContainerRef} from '@angular/core';
-import { ControlToComponentMapperService  } from 'content/services/control-to-component-mapper.service';
-import { CurrentContentService } from 'content/services/current-content.service';
+import { ControlToComponentMapperService  } from '../../services/control-to-component-mapper.service';
+import { CurrentContentService } from '../../services/current-content.service';
 
 @Component({
   selector: 'master-layout',

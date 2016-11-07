@@ -4,7 +4,9 @@ import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
 
 import { CoreModule } from '../src/app/core/core.module';
+import { ContentModule } from '../src/app/content/content.module';
 import { BookingFunnelModule } from '../src/app/booking-funnel/booking-funnel.module';
+/*import {COMPILER_PROVIDERS} from '@angular/compiler';*/
 //import {AppComponent} from './app.component';
 //import {EmbeddedViewResolver} from './embedded-view-resolver';
 
@@ -14,13 +16,17 @@ import { BookingFunnelModule } from '../src/app/booking-funnel/booking-funnel.mo
     FormsModule,
     HttpModule,
     CoreModule,
+    ContentModule,
     BookingFunnelModule
   ],
-  
+
   providers: [
     ...BookingFunnelModule.forRoot(),
-    ...CoreModule.forRoot()],
+    ...CoreModule.forRoot(),
+    ...ContentModule.forRoot()/*,
+    ...COMPILER_PROVIDERS*/
+  ],
   //bootstrap: [AppComponent,  [{provide : ViewResolver, useClass: EmbeddedViewResolver}]]
-  bootstrap: [...BookingFunnelModule.getComponents()]
+  bootstrap: [...BookingFunnelModule.getBootstrapComponents(), ...ContentModule.getBootstrapComponents()]
 })
 export class AppModule { }

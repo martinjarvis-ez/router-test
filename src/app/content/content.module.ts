@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule }   from '@angular/router';
 import { CoreModule } from '../core/core.module';
 
-import { COMPONENTS, SERVICES, COMPONENT_MAPPING } from './constants';
+import { COMPONENTS, SERVICES, COMPONENT_MAPPING, BOOTSTRAP_COMPONENTS } from './constants';
 
 @NgModule({
   imports: [
@@ -25,6 +25,10 @@ export class ContentModule {
 
   static getComponentMappings(): { [path: string]: any; } {
     return COMPONENT_MAPPING;
+  }
+
+  static getBootstrapComponents(){
+    return BOOTSTRAP_COMPONENTS;
   }
 
 }

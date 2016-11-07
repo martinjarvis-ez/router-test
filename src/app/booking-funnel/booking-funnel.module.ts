@@ -3,7 +3,7 @@ import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
-import { COMPONENTS, SERVICES, COMPONENT_MAPPING } from './constants';
+import { COMPONENTS, SERVICES, COMPONENT_MAPPING, BOOTSTRAP_COMPONENTS } from './constants';
 
 @NgModule({
   imports: [
@@ -28,6 +28,10 @@ export class BookingFunnelModule {
 
   static getComponentMappings(): { [path: string]: any; } {
     return COMPONENT_MAPPING;
+  }
+
+  static getBootstrapComponents(){
+    return BOOTSTRAP_COMPONENTS;
   }
 
 }

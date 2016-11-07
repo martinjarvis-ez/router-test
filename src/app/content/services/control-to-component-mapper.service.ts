@@ -1,8 +1,8 @@
 import { Injectable, ViewContainerRef, ComponentFactoryResolver, ComponentRef} from '@angular/core';
 import { NotFoundComponent } from '../components/not-found/not-found.component';
-import { Layout, Control, Placeholder } from 'core/models/control';
-import { ControlComponent } from 'core/components/control.component';
-import { FactoryMapService } from 'content/services/factory-map.service';
+import { Layout, Control, Placeholder } from '../../core/models/control';
+import { ControlComponent } from '../../core/components/control.component';
+import { FactoryMapService } from '../services/factory-map.service';
 
 @Injectable()
 export class ControlToComponentMapperService {

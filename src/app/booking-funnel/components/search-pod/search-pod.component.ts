@@ -4,10 +4,7 @@ import { SearchCriteria } from '../../models/search-criteria';
 import * as cloneDeep from "lodash/cloneDeep";
 import { RootControlComponent } from '../../../core/components/root-control.component';
 
-let module: any; // nasty fix for systemJs
-
 @Component({
-  moduleId: module.id, // nasty fix for systemJs
   selector: 'search-pod',
   templateUrl: './search-pod.component.html',
   styleUrls: ['./search-pod.component.scss']

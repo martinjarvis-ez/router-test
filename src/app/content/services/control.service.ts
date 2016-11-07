@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 import 'rxjs/add/observable/throw'
-import {SettingsService} from 'core/services/settings.service';
-import {Layout} from 'core/models/control';
+import {SettingsService} from '../../core/services/settings.service';
+import {Layout} from '../../core/models/control';
 
 
 @Injectable()
