@@ -7,6 +7,9 @@ import { CoreModule } from '../src/app/core/core.module';
 import { ContentModule } from '../src/app/content/content.module';
 import { BookingFunnelModule } from '../src/app/booking-funnel/booking-funnel.module';
 
+import { BOOTSTRAP_COMPONENTS as BFBS } from '../src/app/booking-funnel/constants';
+import { BOOTSTRAP_COMPONENTS as CBS } from '../src/appcontent/constants';
+
 import { NavigationService } from '../src/app/core/services/navigation.service';
 import { BrowserNavigationService } from './browser-navigation.service';
 
@@ -26,8 +29,8 @@ import { BrowserNavigationService } from './browser-navigation.service';
     { provide: NavigationService, useClass: BrowserNavigationService }
   ]
   bootstrap: [
-    ...BookingFunnelModule.getBootstrapComponents(),
-    ...ContentModule.getBootstrapComponents()
+    ...BFBS,
+    ...CBS
   ]
 })
 export class AppModule { }

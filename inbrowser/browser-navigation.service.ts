@@ -6,7 +6,7 @@ export class BrowserNavigationService {
   constructor() { }
 
   navigate(targetPath:string){
-      window.location = targetPath;
+      window.location.href = targetPath;
   }
 
 }
