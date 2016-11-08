@@ -7,10 +7,9 @@ import { RouterModule }   from '@angular/router';
 import { APP_ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 
-import { CoreModule } from './core';
-import { BookingFunnelModule } from './booking-funnel';
-import { ContentModule } from './content';
-/*import { RuntimeCompiler } from '@angular/compiler';*/
+import { CoreModule } from '../core';
+import { BookingFunnelModule } from '../booking-funnel';
+import { ContentModule } from '../content';
 
 @NgModule({
   declarations: [

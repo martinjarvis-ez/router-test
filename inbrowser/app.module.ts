@@ -6,9 +6,6 @@ import { CoreModule } from '../src/app/core/core.module';
 
 import { ContentModule } from '../src/app/content/content.module';
 import { BookingFunnelModule } from '../src/app/booking-funnel/booking-funnel.module';
-/*import {COMPILER_PROVIDERS} from '@angular/compiler';*/
-//import {AppComponent} from './app.component';
-//import {EmbeddedViewResolver} from './embedded-view-resolver';
 
 import { NavigationService } from '../src/app/core/services/navigation.service';
 import { BrowserNavigationService } from './browser-navigation.service';
@@ -26,10 +23,8 @@ import { BrowserNavigationService } from './browser-navigation.service';
     ...BookingFunnelModule.forRoot(),
     ...CoreModule.forRoot(),
     ...ContentModule.forRoot(),
-    { provide: NavigationService, useClass: BrowserNavigationService }/*,
-    ...COMPILER_PROVIDERS*/
-  ],
-  //bootstrap: [AppComponent,  [{provide : ViewResolver, useClass: EmbeddedViewResolver}]]
+    { provide: NavigationService, useClass: BrowserNavigationService }
+  ]
   bootstrap: [
     ...BookingFunnelModule.getBootstrapComponents(),
     ...ContentModule.getBootstrapComponents()

@@ -4,7 +4,7 @@
     "name": "router-test"
   },
   "apps": [
-    {
+   {
       "root": "src",
       "outDir": "dist",
       "assets": [
@@ -15,7 +15,7 @@
       "main": "main.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
-      "prefix": "''",
+      "prefix": "",
       "mobile": false,
       "styles": [
         "grid.scss",
@@ -28,6 +28,7 @@
         "prod": "environments/environment.prod.ts"
       }
     }
+
   ],
   "addons": [],
   "packages": [],
