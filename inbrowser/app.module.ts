@@ -27,7 +27,7 @@ import { BrowserNavigationService } from './browser-navigation.service';
     ...CoreModule.forRoot(),
     ...ContentModule.forRoot(),
     { provide: NavigationService, useClass: BrowserNavigationService }
-  ]
+  ],
   bootstrap: [
     ...BFBS,
     ...CBS

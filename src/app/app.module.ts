@@ -27,8 +27,7 @@ import { ContentModule } from '../content';
   providers: [
     ...ContentModule.forRoot(),
     ...BookingFunnelModule.forRoot(),
-    ...CoreModule.forRoot()/*,
-    RuntimeCompiler*/
+    ...CoreModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })
