@@ -56,7 +56,7 @@
         }, {
           "name": "Next Step",
           "type": "Single Line Text",
-          "value": "Next Step Link: "
+          "value": "/FlightGrid"
         }]
       }]
     }]
