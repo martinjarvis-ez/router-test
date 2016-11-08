@@ -2,10 +2,7 @@ import { Component, AfterViewInit, ViewChild, ViewContainerRef} from '@angular/c
 import { ControlToComponentMapperService  } from '../../services/control-to-component-mapper.service';
 import { CurrentContentService } from '../../services/current-content.service';
 
-var module:any;
-
 @Component({
-  moduleId: module.id,
   selector: 'master-layout',
   templateUrl: './master-layout.component.html',
   styleUrls: ['./master-layout.component.scss']

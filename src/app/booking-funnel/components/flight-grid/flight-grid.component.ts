@@ -4,10 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { FlightResult } from '../../models/flight-result.interface';
 import { FlightType } from '../../models/flight-type.enum';
 
-var module:any;
-
 @Component({
-  moduleId: module.id,
   selector: 'flight-grid',
   templateUrl: './flight-grid.component.html',
   styleUrls: ['./flight-grid.component.scss']
@@ -28,9 +25,9 @@ export class FlightGridComponent implements OnInit {
 
   ngOnInit() {
     if (this.flightType === FlightType.Outbound){
-      this.subscription = this.findFlight.outbound.subscribe(results => this.updateResults(results));
+      this.subscription = this.findFlight.outbound.subscribe((results: FlightResult[]) => this.updateResults(results));
     } else {
-      this.subscription = this.findFlight.inbound.subscribe(results => this.updateResults(results));
+      this.subscription = this.findFlight.inbound.subscribe((results: FlightResult[]) => this.updateResults(results));
     }
   }
 

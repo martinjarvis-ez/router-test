@@ -9,7 +9,6 @@ export class EmbeddedViewResolver extends ViewResolver
   constructor(private _r: Reflector){ super() }
   resolve(component: Type): ViewMetadata
   {
-    debugger;
     let annotations = this._r.annotations(component);
     annotations.forEach( cm =>
     {
@@ -18,7 +17,6 @@ export class EmbeddedViewResolver extends ViewResolver
         let elemTpl = (<any>document).getElementById(cm.templateUrl);
         if( elemTpl && elemTpl.tagName === SCRIPT_TYPE_NAME )
         {
-          debugger;
           cm.template = elemTpl.innerHTML;
           elemTpl.remove();
           cm.templateUrl = undefined

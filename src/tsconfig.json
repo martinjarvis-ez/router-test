@@ -16,20 +16,6 @@
     "typeRoots": [
       "../node_modules/@types"
     ],
-    "baseUrl": ".",
-    "paths": {
-      "assets/*": [
-        "app/assets/*"
-      ],
-      "core/*": [
-        "app/core/*"
-      ],
-      "content/*": [
-        "app/content/*"
-      ],
-      "booking-funnel/*": [
-        "app/booking-funnel/*"
-      ]
-    }
+    "baseUrl": "."
   }
 }

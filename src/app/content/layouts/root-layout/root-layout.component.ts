@@ -7,10 +7,7 @@ import { Layout } from '../../../core/models/control';
 
 import { Subscription } from 'rxjs/Subscription';
 
-var module:any;
-
 @Component({
-  moduleId: module.id,
   selector: 'root-layout',
   templateUrl: './root-layout.component.html',
   styleUrls: ['./root-layout.component.scss']

@@ -7,6 +7,13 @@ import { SearchCriteriaDebugComponent } from './components/search-criteria-debug
 import { SearchService } from './services/search.service';
 import { FindFlightService } from './services/find-flight.service';
 
+import { FlightResult } from './models/flight-result.interface';
+import { Flight } from './models/flight.interface';
+import { PassengerMix } from './models/passenger-mix';
+import { SearchCriteria } from './models/search-criteria';
+import { FlightType } from './models/flight-type.enum';
+import { RawResults, FlightSummary, FlightFare, Prices, Price, SegmentId, FlightNumber   } from './models/raw-flight-results.interface';
+
 export const COMPONENTS: Type<any>[] = [
   SearchPodComponent,
   SearchCriteriaDebugComponent,
@@ -27,3 +34,13 @@ export const COMPONENT_MAPPING: { [path: string]: any; } = {
   "/Views/SearchPodCriteriaDebug.cshtml": SearchCriteriaDebugComponent,
   "/Views/FlightResult.cshtml": FlightResultComponent
 };
+
+export const MODELS: Type<any>[] = [
+//  Flight,
+  //FlightType,
+  //FlightResult,
+  PassengerMix,
+  //RawResults, FlightSummary, FlightFare, Prices, Price, SegmentId, FlightNumber,
+  SearchCriteria
+
+];

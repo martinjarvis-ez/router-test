@@ -5,10 +5,7 @@ import * as cloneDeep from "lodash/cloneDeep";
 import { RootControlComponent } from '../../../core/components/root-control.component';
 import { NavigationService } from '../../../core/services/navigation.service';
 
-var module:any;
-
 @Component({
-  moduleId: module.id,
   selector: 'search-pod',
   templateUrl: './search-pod.component.html',
   styleUrls: ['./search-pod.component.scss']

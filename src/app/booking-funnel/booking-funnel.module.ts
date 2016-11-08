@@ -19,7 +19,7 @@ import { COMPONENTS, SERVICES, COMPONENT_MAPPING, BOOTSTRAP_COMPONENTS } from '.
 export class BookingFunnelModule {
 
   static forRoot(): Type<any>[] {
-    return SERVICES;
+    return [...SERVICES];
   }
 
   static getComponents(): Type<any>[] {
@@ -30,7 +30,7 @@ export class BookingFunnelModule {
     return COMPONENT_MAPPING;
   }
 
-  static getBootstrapComponents(){
+  static getBootstrapComponents() {
     return BOOTSTRAP_COMPONENTS;
   }
 
