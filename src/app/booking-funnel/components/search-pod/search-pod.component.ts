@@ -3,9 +3,12 @@ import { SearchService } from '../../services/search.service';
 import { SearchCriteria } from '../../models/search-criteria';
 import * as cloneDeep from "lodash/cloneDeep";
 import { RootControlComponent } from '../../../core/components/root-control.component';
-import { Router } from '@angular/router';
+import { NavigationService } from '../../../core/services/navigation.service';
+
+var module:any;
 
 @Component({
+  moduleId: module.id,
   selector: 'search-pod',
   templateUrl: './search-pod.component.html',
   styleUrls: ['./search-pod.component.scss']
@@ -14,7 +17,7 @@ export class SearchPodComponent extends RootControlComponent implements OnInit {
 
   model: SearchCriteria;
 
-  constructor(private search: SearchService, elm: ElementRef, private router: Router) {
+  constructor(private search: SearchService, elm: ElementRef, private nav: NavigationService) {
     super(elm);
   }
 
@@ -27,7 +30,7 @@ export class SearchPodComponent extends RootControlComponent implements OnInit {
     this.search.Stream.emit(current);
     let nextStep = this.getFieldValue('Next Step');
     if (nextStep) {
-      this.router.navigate([nextStep]);
+      this.nav.navigate(nextStep);
     }
   }
 

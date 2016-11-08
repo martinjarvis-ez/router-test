@@ -4,7 +4,10 @@ import { Subscription } from 'rxjs/Subscription';
 import { FlightResult } from '../../models/flight-result.interface';
 import { FlightType } from '../../models/flight-type.enum';
 
+var module:any;
+
 @Component({
+  moduleId: module.id,
   selector: 'flight-grid',
   templateUrl: './flight-grid.component.html',
   styleUrls: ['./flight-grid.component.scss']
