@@ -3,6 +3,7 @@ import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
+import {Ng2Webstorage} from 'ng2-webstorage';
 import { COMPONENTS, SERVICES, COMPONENT_MAPPING, BOOTSTRAP_COMPONENTS } from './constants';
 
 @NgModule({
@@ -10,7 +11,8 @@ import { COMPONENTS, SERVICES, COMPONENT_MAPPING, BOOTSTRAP_COMPONENTS } from '.
     BrowserModule,
     FormsModule,
     CommonModule,
-    CoreModule
+    CoreModule,
+    Ng2Webstorage
   ],
   declarations: [...COMPONENTS],
   entryComponents: [...COMPONENTS],
@@ -19,7 +21,7 @@ import { COMPONENTS, SERVICES, COMPONENT_MAPPING, BOOTSTRAP_COMPONENTS } from '.
 export class BookingFunnelModule {
 
   static forRoot(): Type<any>[] {
-    return [...SERVICES];
+    return [...SERVICES, Ng2Webstorage];
   }
 
   static getComponents(): Type<any>[] {

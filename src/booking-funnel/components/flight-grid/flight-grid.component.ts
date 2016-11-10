@@ -9,33 +9,33 @@ import { FlightType } from '../../models/flight-type.enum';
   templateUrl: './flight-grid.component.html',
   styleUrls: ['./flight-grid.component.scss']
 })
-export class FlightGridComponent implements OnInit {
+export class FlightGridComponent implements OnInit, OnDestroy {
 
   @Input() flightType: FlightType;
 
   model: FlightResult[];
 
-  get direction():string{
+  get direction(): string {
     return FlightType[this.flightType];
   }
 
-  private subscription : Subscription;
+  private subscription: Subscription;
 
-  constructor(private findFlight : FindFlightService){}
+  constructor(private findFlight: FindFlightService) { }
 
   ngOnInit() {
-    if (this.flightType === FlightType.Outbound){
+    if (this.flightType === FlightType.Outbound) {
       this.subscription = this.findFlight.outbound.subscribe((results: FlightResult[]) => this.updateResults(results));
     } else {
       this.subscription = this.findFlight.inbound.subscribe((results: FlightResult[]) => this.updateResults(results));
     }
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
-  private updateResults(results: FlightResult[]){
+  private updateResults(results: FlightResult[]) {
     this.model = results;
   }
 

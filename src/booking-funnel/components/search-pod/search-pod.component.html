@@ -1,25 +1,16 @@
 <fieldset>
   <legend>Search Criteria</legend>
+  <span *ngIf="recentSearches.length >0" (click)="showRecent()">Show Recent Searches ({{recentSearches.length}}) &gt;&gt;</span>
   <p><input type="checkbox" id="oneWay" [(ngModel)]="model.OneWay" /><label for="oneWay"><span  [field]="'One Way Label'" [control]="control" [isEditing]="isEditing" [defaultValue]="'One Way'"></span></label>
     <p>
       <label for="departureAirport"><span  [field]="'Departure Label'" [control]="control" [isEditing]="isEditing" [defaultValue]="'Depart From:'"></span></label>
-      <select id="departureAirport" required [(ngModel)]="model.DepartureAirport">
-<option value="LTN">London Luton (LTN)</option>
-<option value="LGW">London Gatwick (LGW)</option>
-<option value="BCN">Barcelona (BCN)</option>
-<option value="ABZ">Aberdeen (ABZ)</option>
-<option value="MAD">Madrid (MAD)</option>
-</select>
+      <airport-name [code]="model.DepartureAirport"></airport-name>
+      <button id="departureAirport" (click)="selectDeparture()">...</button>
     </p>
     <p>
-      <label for="departureAirport"><span  [field]="'Destination Label'" [control]="control" [isEditing]="isEditing" [defaultValue]="'Arrive At:'"></span></label>
-      <select id="arrivalAirport" required [(ngModel)]="model.ArrivalAirport">
-    <option value="LTN">London Luton (LTN)</option>
-    <option value="LGW">London Gatwick (LGW)</option>
-    <option value="BCN">Barcelona (BCN)</option>
-    <option value="ABZ">Aberdeen (ABZ)</option>
-    <option value="MAD">Madrid (MAD)</option>
-  </select>
+      <label for="arrivalAirport"><span  [field]="'Destination Label'" [control]="control" [isEditing]="isEditing" [defaultValue]="'Arrive At:'"></span></label>
+      <airport-name [code]="model.ArrivalAirport"></airport-name>
+      <button id="arrivalAirport" (click)="selectArrival()">...</button>
     </p>
     <p>
       <label for="departureDate"><span [field]="'Departure Date'" [control]="control" [isEditing]="isEditing" [defaultValue]="'Depart On:'"></span></label>

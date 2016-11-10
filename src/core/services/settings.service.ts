@@ -7,4 +7,8 @@ export class SettingsService {
   //contentUrl:string = 'http://sitecorepoc/sitecore/api/content/';
   contentUrl:string = 'assets/content/';
   defaultContentId:string = '110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9';
+  embedContent:boolean = true;
+
+  airportReferenceUrl:string = 'assets/reference-data/airports.json';
+
 }

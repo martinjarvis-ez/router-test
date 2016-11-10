@@ -11,6 +11,7 @@ import { CoreModule } from '../core';
 import { BookingFunnelModule } from '../booking-funnel';
 import { ContentModule } from '../content';
 
+
 @NgModule({
   declarations: [
     AppComponent

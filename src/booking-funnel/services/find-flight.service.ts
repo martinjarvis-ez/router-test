@@ -7,7 +7,7 @@ import { Flight } from '../models/flight.interface';
 import { RawResults, FlightSummary, FlightFare, Prices, Price, SegmentId, FlightNumber } from '../models/raw-flight-results.interface'
 import { SettingsService } from '../../core/services/settings.service';
 import { FlightResult } from '../models/flight-result.interface';
-import { FlightResultEventEmitter } from './flight-result-event-emitter';
+import { Subject } from 'rxjs/Subject';
 import * as orderBy from "lodash/orderBy";
 import * as moment from 'moment';
 import { Http, Response, Headers, URLSearchParams, RequestOptionsArgs} from '@angular/http';
@@ -20,8 +20,8 @@ export class FindFlightService {
 
   model: SearchCriteria;
 
-  outbound: FlightResultEventEmitter = new FlightResultEventEmitter();
-  inbound: FlightResultEventEmitter = new FlightResultEventEmitter();
+  outbound = new Subject<FlightResult[]>();
+  inbound = new Subject<FlightResult[]>();
 
   private subscription: Subscription;
   constructor(private search: SearchService, private http: Http, private settings: SettingsService) {
@@ -34,7 +34,7 @@ export class FindFlightService {
     if (!criteria.OneWay) {
       this.processInbound(criteria);
     } else {
-      this.inbound.emit([]);
+      this.inbound.next([]);
     }
   }
 
@@ -57,7 +57,7 @@ export class FindFlightService {
     this.http.get(this.settings.flightSearchUrl, opts)
       .map(res => this.mapFlights(res, criteria.ArrivalAirport, criteria.DepartureAirport, minDate, maxDate))
       .catch(this.handleError)
-      .subscribe(results => this.inbound.emit(results));
+      .subscribe(results => this.inbound.next(results));
   };
 
   private processOutbound(criteria: SearchCriteria) {
@@ -79,7 +79,7 @@ export class FindFlightService {
     this.http.get(this.settings.flightSearchUrl, opts)
       .map(res => this.mapFlights(res, criteria.DepartureAirport, criteria.ArrivalAirport, minDate, maxDate))
       .catch(this.handleError)
-      .subscribe(results => this.outbound.emit(results));
+      .subscribe(results => this.outbound.next(results));
   };
 
   private mapFlights(res: Response, departureAirport: string, arrivalAirport: string, minDate: moment.Moment, maxDate: moment.Moment): FlightResult[] {
