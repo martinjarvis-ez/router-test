@@ -5,7 +5,10 @@ import { ContentModule } from '../content';
 
 import * as mapKeys from "lodash/mapKeys";
 
+var module:any;
+
 @Component({
+  moduleId: module.id,
   selector: 'root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

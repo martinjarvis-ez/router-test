@@ -3,7 +3,10 @@ import { RootControlComponent } from '../../../core/components/root-control.comp
 import { ControlToComponentMapperService  } from '../../services/control-to-component-mapper.service';
 import { CurrentContentService } from '../../services/current-content.service';
 
+var module:any;
+
 @Component({
+  moduleId: module.id,
   selector: 'banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.scss']
