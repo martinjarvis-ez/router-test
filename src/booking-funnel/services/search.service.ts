@@ -7,15 +7,21 @@ import { SearchCriteria } from '../models/search-criteria'
 
 @Injectable()
 export class SearchService {
-  Stream = new Subject<SearchCriteria>();
-  RecentSearchStream : BehaviorSubject<SearchCriteria[]>;
+  Stream: BehaviorSubject<SearchCriteria>;
+  RecentSearchStream: BehaviorSubject<SearchCriteria[]>;
 
   private _recentSearchKey: string = 'recent-search-cache';
   private _recentSearches: SearchCriteria[];
 
   constructor(private storage: LocalStorageService) {
-    this._recentSearches = this.storage.retrieve(this._recentSearchKey)|| [];
-    this.RecentSearchStream = new BehaviorSubject<SearchCriteria[]>(this._recentSearches );
+    this._recentSearches = this.storage.retrieve(this._recentSearchKey) || [];
+
+    let latest: SearchCriteria = null;
+    if (this._recentSearches && this._recentSearches.length > 0) {
+      latest = this._recentSearches[0];
+    }
+    this.RecentSearchStream = new BehaviorSubject<SearchCriteria[]>(this._recentSearches);
+    this.Stream = new BehaviorSubject<SearchCriteria>(latest);
     this.storage.observe(this._recentSearchKey).subscribe((data: SearchCriteria[]) => this.broadcastSearch(data));
   }
 

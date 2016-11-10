@@ -8,22 +8,22 @@ import { SearchCriteria } from '../../models/search-criteria'
   templateUrl: './search-criteria-debug.component.html',
   styleUrls: ['./search-criteria-debug.component.scss']
 })
-export class SearchCriteriaDebugComponent implements OnInit, OnDestroy  {
+export class SearchCriteriaDebugComponent implements OnInit, OnDestroy {
 
-  model:SearchCriteria;
-  private subscription : Subscription;
-  constructor(private search : SearchService) { }
+  model: SearchCriteria;
+  private subscription: Subscription;
+  constructor(private search: SearchService) { }
 
   ngOnInit() {
-    this.subscription = this.search.Stream.subscribe(criteria => this.processCriteria(criteria));
+    this.subscription = this.search.Stream.subscribe((criteria: SearchCriteria) => this.processCriteria(criteria));
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
-    private processCriteria(criteria:SearchCriteria ){
-          this.model =criteria;
-      }
+  private processCriteria(criteria: SearchCriteria) {
+    this.model = criteria;
+  }
 
 }
