@@ -1,0 +1,8 @@
+<h3 *ngIf="model && model.length>0">
+  <airport-name [code]="model[0].DepartureAirport"></airport-name> to
+<airport-name [code]="model[0].ArrivalAirport"></airport-name>
+</h3>
+<section class="gr-4" *ngFor="let day of model">
+  <header> {{ day.Date | date}}</header>
+  <flight-tile *ngFor="let flight of day.Flights" [flight]="flight"></flight-tile>
+</section>

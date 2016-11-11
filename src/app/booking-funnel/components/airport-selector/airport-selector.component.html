@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let airport of airports" (click)="select(airport)" [class.selected]="isSelected(airport)" [class.is-valid]="isValid(airport)">
+    <airport-name [code]="airport.Iata"></airport-name>
+  </li>
+</ul>

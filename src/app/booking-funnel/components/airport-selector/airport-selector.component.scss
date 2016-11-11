@@ -1,0 +1,23 @@
+@import '../../_variables';
+
+li {
+  color: $ej-disabled;
+  border-left: 3px solid $ej-brand;
+  background-color: $ej-list-background;
+  margin: 1px;
+  padding: 0 2px;
+  list-style-type: none;
+
+  &.is-valid {
+    color: $ej-brand;
+  }
+
+  &.selected {
+    font-weight: bold;
+  }
+
+  &:hover, &.selected {
+    background-color: $ej-brand;
+    color: $ej-link;
+  }
+}

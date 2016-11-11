@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let search of recentSearches" (click)="selectRecent(search)">
+    <h4><airport-name [code]="search.DepartureAirport"></airport-name> - <airport-name [code]="search.ArrivalAirport"></airport-name></h4>
+    <span *ngIf="search.OneWay">{{ search.DepartureDate | date }} (One Way)</span>
+    <span *ngIf="!search.OneWay">{{ search.DepartureDate | date }} - {{ search.ReturnDate | date }}</span>
+  </li>
+</ul>
