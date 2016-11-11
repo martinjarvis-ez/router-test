@@ -1,7 +1,7 @@
 import { Component, Type } from '@angular/core';
-import { FactoryMapService } from '../content/services/factory-map.service';
-import { BookingFunnelModule } from '../booking-funnel';
-import { ContentModule } from '../content';
+import { FactoryMapService } from './content/services/factory-map.service';
+import { BookingFunnelModule } from './booking-funnel';
+import { ContentModule } from './content';
 
 import * as mapKeys from "lodash/mapKeys";
 

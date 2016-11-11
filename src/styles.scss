@@ -8,7 +8,7 @@ body {
 	margin: 0;
 }
 
-header {
+master-layout > header {
   background: $ej-brand url($ej-header-img);
   box-shadow: 0 3px 5px 1px #444;
   z-index:300;
