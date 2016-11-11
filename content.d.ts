@@ -1,2 +1,1 @@
-export * from './dist/src/content/constants';
-export * from './dist/src/content';
+export * from './lib/app/content/index';

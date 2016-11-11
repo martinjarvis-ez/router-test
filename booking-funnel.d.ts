@@ -1,2 +1,1 @@
-export * from './dist/src/booking-funnel/constants';
-export * from './dist/src/booking-funnel';
+export * from './lib/booking-funnel/index';

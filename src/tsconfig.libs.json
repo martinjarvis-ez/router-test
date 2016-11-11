@@ -1,0 +1,37 @@
+{
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es6", "dom"],
+    "moduleResolution": "node",
+    "removeComments": true,
+    "sourceMap": true,
+    "outDir": "../lib",
+    "declaration": true,
+    "typeRoots": [
+      "../node_modules/@types"
+    ],
+    "baseUrl": "."
+  },
+  "files": [
+    "app/core/index.ts",
+    "app/content/index.ts",
+    "app/booking-funnel/index.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "angularCompilerOptions": {
+   "genDir": ".",
+   "debug": true
+ },
+  "awesomeTypescriptLoaderOptions": {
+    "forkChecker": true,
+    "useWebpackText": true
+  }
+}
