@@ -3,7 +3,7 @@ import { NgModule, Type } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-import { COMPONENTS, SERVICES, DIRECTIVES } from './constants';
+import { CORE_COMPONENTS, CORE_SERVICES, CORE_DIRECTIVES } from './constants';
 
 @NgModule({
   imports: [
@@ -11,15 +11,15 @@ import { COMPONENTS, SERVICES, DIRECTIVES } from './constants';
     FormsModule,
     BrowserModule
   ],
-  declarations: [...COMPONENTS, ...DIRECTIVES],
-  entryComponents: [...COMPONENTS],
-  providers: [...SERVICES],
-  exports: [...COMPONENTS, ...DIRECTIVES]
+  declarations: [...CORE_COMPONENTS, ...CORE_DIRECTIVES],
+  entryComponents: [...CORE_COMPONENTS],
+  providers: [...CORE_SERVICES],
+  exports: [...CORE_COMPONENTS, ...CORE_DIRECTIVES]
 })
 export class CoreModule {
 
   static forRoot(): Type<any>[] {
-    return [...SERVICES];
+    return [...CORE_SERVICES];
   }
 
 }

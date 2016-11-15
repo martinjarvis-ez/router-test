@@ -13,9 +13,6 @@ import { RawResults, FlightSummary, FlightFare, Prices, Price, SegmentId, Flight
 
 import { SettingsService } from '../../core/index';
 
-
-
-
 @Injectable()
 export class FindFlightService {
 

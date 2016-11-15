@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {SearchService} from '../../services/index';
+import { SearchService } from '../../services/index';
 import { Subscription } from 'rxjs/Subscription';
 import { SearchCriteria } from '../../models/index'
 

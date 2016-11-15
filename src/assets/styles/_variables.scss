@@ -3,5 +3,9 @@ $ej-disabled: #999;
 $ej-link: #fff;
 $ej-list-background:#2d2d2d;
 $ej-headerlink: $ej-link;
-$ej-header-img: 'assets/styles/images/header.gif';
-$ej-header-logo: 'assets/styles/images/ej-transparent-x.png';
+$ej-header-img: '/assets/styles/images/header.gif';
+$ej-header-logo: '/assets/styles/images/ej-transparent-x.png';
+
+
+$drawer-width-large: 690px;
+$drawer-bgcolor: #000;

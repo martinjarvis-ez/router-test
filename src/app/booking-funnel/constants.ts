@@ -5,19 +5,25 @@ import { SearchCriteria, PassengerMix } from './models/index';
 
 import { SearchService, AirportService, FindFlightService } from './services/index';
 
-export const SERVICES: Type<any>[] = [
+export const BOOKING_FUNNEL_SERVICES: Type<any>[] = [
   SearchService,
   FindFlightService,
   AirportService];
 
-export const COMPONENT_MAPPING: { [path: string]: any; } = {
+export const BOOKING_FUNNEL_COMPONENT_MAPPING: { [path: string]: Type<any>; } = {
   "/Views/SearchPod.cshtml": SearchPodComponent,
   "/Views/SearchPodCriteriaDebug.cshtml": SearchCriteriaDebugComponent,
   "/Views/FlightResult.cshtml": FlightResultComponent,
   "/Views/AirportSelector.cshtml": AirportSelectorComponent
 };
 
-export const COMPONENTS: Type<any>[] = [
+export const BOOKING_FUNNEL_ROOT_COMPONENTS: { [key: string]: Type<any>; } = {
+  "search-pod": SearchPodComponent,
+  "search-criteria-debug": SearchCriteriaDebugComponent,
+  "flight-result": FlightResultComponent
+};
+
+export const BOOKING_FUNNEL_COMPONENTS: Type<any>[] = [
   SearchPodComponent,
   SearchCriteriaDebugComponent,
   FlightResultComponent,
@@ -28,16 +34,18 @@ export const COMPONENTS: Type<any>[] = [
   RecentSearchesDrawerComponent,
   AirportNameComponent];
 
-export const DRAWERS: Type<any>[] = [
+export const BOOKING_FUNNEL_DRAWERS: Type<any>[] = [
   AirportSelectorDrawerComponent,
   RecentSearchesDrawerComponent,
 ];
 
-export const BOOTSTRAP_COMPONENTS: Type<any>[] = [
-  SearchPodComponent
+export const BOOKING_FUNNEL_BOOTSTRAP_COMPONENTS: Type<any>[] = [
+  SearchPodComponent,
+  FlightResultComponent,
+  FlightResultComponent
 ]
 
-export const MODELS: Type<any>[] = [
+export const BOOKING_FUNNEL_MODELS: Type<any>[] = [
   PassengerMix,
   SearchCriteria
 ];

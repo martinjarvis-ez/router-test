@@ -4,18 +4,18 @@ import { HtmlComponent, NotFoundComponent, BannerComponent } from './components/
 import { RootLayoutComponent, MasterLayoutComponent } from './layouts/index';
 import { ControlService, CurrentContentService, ControlResolverService, ControlToComponentMapperService, FactoryMapService } from './services/index';
 
-export const COMPONENTS: Type<any>[] = [
+export const CONTENT_COMPONENTS: Type<any>[] = [
   HtmlComponent,
   NotFoundComponent,
   BannerComponent,
   RootLayoutComponent,
   MasterLayoutComponent];
 
-export const BOOTSTRAP_COMPONENTS: Type<any>[] = [
+export const CONTENT_BOOTSTRAP_COMPONENTS: Type<any>[] = [
   BannerComponent
 ];
 
-export const SERVICES: Type<any>[] = [
+export const CONTENT_SERVICES: Type<any>[] = [
   ControlService,
   CurrentContentService,
   ControlResolverService,
@@ -23,7 +23,12 @@ export const SERVICES: Type<any>[] = [
   FactoryMapService
 ];
 
-export const COMPONENT_MAPPING: { [path: string]: any; } = {
+export const CONTENT_ROOT_COMPONENTS: { [key: string]: Type<any>; } = {
+  "banner": HtmlComponent,
+  "cms-html": HtmlComponent
+};
+
+export const CONTENT_COMPONENT_MAPPING: { [path: string]: Type<any>; } = {
   "/Views/Shared/Master Layout.cshtml": MasterLayoutComponent,
   "/Views/Html.cshtml": HtmlComponent,
   "/Views/Banner.cshtml": BannerComponent

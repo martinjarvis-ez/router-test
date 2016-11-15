@@ -1,7 +1,7 @@
 {
   "project": {
     "version": "1.0.0-beta.18",
-    "name": "router-test"
+    "name": "easyjet-angular2-poc"
   },
   "apps": [
    {
@@ -18,8 +18,8 @@
       "prefix": "",
       "mobile": false,
       "styles": [
-        "grid.scss",
-        "styles.scss"
+        "assets/styles/grid.scss",
+        "assets/styles/styles.scss"
       ],
       "scripts": [],
       "environments": {

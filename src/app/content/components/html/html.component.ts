@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {ControlComponent} from '../../../core/index';
 
 @Component({
-  selector: 'html',
+  selector: 'cms-html',
   templateUrl: './html.component.html',
   styleUrls: ['./html.component.scss']
 })

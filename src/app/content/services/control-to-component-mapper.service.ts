@@ -19,7 +19,7 @@ export class ControlToComponentMapperService {
   }
 
   createPlaceholderControls(template: ViewContainerRef, placeholders: Placeholder[], placeholder: string): ComponentRef<any>[] {
-    if (!template) return;
+    if (!template) return [];
     let refs: ComponentRef<any>[] = [];
     if (placeholder && placeholder.startsWith('/')){
       placeholder=placeholder.substr(1);

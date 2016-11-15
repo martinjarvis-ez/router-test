@@ -53,26 +53,15 @@ export class FieldDirective extends CommonControlComponent {
             }
             source.parentNode.removeChild(source);
           }
+
         }
         return;
       }
-      this.renderer.setText(this.el.nativeElement, value || this._defaultValue);
-      // should be safe to run everywhere!
-      //FieldDirective.addDynamicContent(this.viewContainerRef, this.builder, value || this._defaultValue, this.templateReference);
-
+      this.renderer.setText(this.el.nativeElement, value);
     }
+    this.renderer.setText(this.el.nativeElement, this._defaultValue);
   }
-/*
-  private static addDynamicContent(vcRef: ViewContainerRef, builder: DynamicTypeBuilderService, template: string, componentRefs: ComponentRef<any>[]) {
 
-    builder.createComponentFactory(template)
-      .then(factory => {
-        vcRef.clear();
-        let cmp = vcRef.createComponent(factory);
-        componentRefs.push(cmp);
-      });
-  }
-*/
   static getFieldValue(data: Control, fieldName: string): string {
     if (data && data.dataSources) {
       for (let ds of data.dataSources) {
